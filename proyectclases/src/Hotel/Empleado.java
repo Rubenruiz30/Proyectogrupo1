@@ -1,14 +1,18 @@
 package Hotel;
-    public class Employee extends Person {
-        private String position;
 
-        public Employee(String id, String name, String phone, String position) {
-            super(id, name, phone);
-            this.position = position;
-        }
+/**
+ * Clase que representa a un empleado del hotel.
+ * También hereda de la clase Persona.
+ */
+public class Empleado extends Persona {
+    private String puesto; // cargo o función del empleado
 
-        public String getPosition() { return position; }
-        public void setPosition(String position) { this.position = position; }
+    public Empleado(String id, String nombre, String telefono, String puesto) {
+        // Constructor que llama al de la clase padre
+        super(id, nombre, telefono);
+        this.puesto = puesto;
     }
 
-
+    public String getPuesto() { return puesto; }
+    public void setPuesto(String puesto) { this.puesto = puesto; }
+}

@@ -1,7 +1,4 @@
 package Hotel;
-public class Factura {
-
-
     /**
      * Clase que representa una factura generada después de confirmar una reserva.
      * Está compuesta por una Reserva.
@@ -29,5 +26,3 @@ public class Factura {
             System.out.println("-----------------");
         }
     }
-
-}

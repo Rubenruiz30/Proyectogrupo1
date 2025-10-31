@@ -1,28 +1,39 @@
 package Hotel;
+
+/**
+ * Clase abstracta base que representa a cualquier persona relacionada con el hotel.
+ * Se usa como clase padre para "Huesped" y "Empleado".
+ */
+public abstract class Persona {
+    // Atributos comunes a todas las personas
+    private String id;
+    private String nombre;
+    private String telefono;
+
     /**
-     * Clase abstracta base para todas las personas del hotel.
+     * Constructor que inicializa los datos básicos de la persona.
      */
-    public abstract class Person {
-        private String id;
-        private String name;
-        private String phone;
-
-        public Person(String id, String name, String phone) {
-            this.id = id;
-            this.name = name;
-            this.phone = phone;
-        }
-
-        public String getId() { return id; }
-        public String getName() { return name; }
-        public String getPhone() { return phone; }
-
-        public void setName(String name) { this.name = name; }
-        public void setPhone(String phone) { this.phone = phone; }
-
-        @Override
-        public String toString() {
-            return name + " (" + id + ")";
-        }
+    public Persona(String id, String nombre, String telefono) {
+        this.id = id;
+        this.nombre = nombre;
+        this.telefono = telefono;
     }
+
+    // Métodos "get" para acceder a los atributos (encapsulación)
+    public String getId() { return id; }
+    public String getNombre() { return nombre; }
+    public String getTelefono() { return telefono; }
+
+    // Métodos "set" para modificar algunos atributos
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    /**
+     * Método que devuelve una representación en texto del objeto.
+     */
+    @Override
+    public String toString() {
+        return nombre + " (" + id + ")";
+    }
+}
 
