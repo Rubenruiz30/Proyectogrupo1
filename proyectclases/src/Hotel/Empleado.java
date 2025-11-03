@@ -2,17 +2,39 @@ package Hotel;
 
 /**
  * Clase que representa a un empleado del hotel.
- * También hereda de la clase Persona.
+ * Hereda de la clase Persona.
  */
 public class Empleado extends Persona {
-    private String puesto; // cargo o función del empleado
+    // Cargo o función del empleado (por ejemplo: recepcionista, cocinero, limpiador...)
+    private String puesto;
 
+    /**
+     * Constructor de la clase Empleado.
+     * Llama al constructor de la clase padre (Persona) para inicializar los datos comunes.
+     */
     public Empleado(String id, String nombre, String telefono, String puesto) {
-        // Constructor que llama al de la clase padre
-        super(id, nombre, telefono);
+        super(id, nombre, telefono); // inicializa los atributos heredados
+        this.puesto = puesto; // inicializa el atributo propio de Empleado
+    }
+
+    // Devuelve el puesto del empleado
+    public String getPuesto() {
+        return puesto;
+    }
+
+    // Cambia el puesto del empleado
+    public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
 
-    public String getPuesto() { return puesto; }
-    public void setPuesto(String puesto) { this.puesto = puesto; }
+    // Muestra la información completa del empleado
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "ID='" + getId() + '\'' +
+                ", Nombre='" + getNombre() + '\'' +
+                ", Teléfono='" + getTelefono() + '\'' +
+                ", Puesto='" + puesto + '\'' +
+                '}';
+    }
 }
